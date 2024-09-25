@@ -44,4 +44,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function donationRequests()
+    {
+        return $this->hasMany(Donnation_Request::class);
+    }
 }
