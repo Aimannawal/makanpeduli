@@ -1,228 +1,336 @@
-<x-app-layout>
-    <div class="relative overflow-hidden">
-        <!-- Hero Section -->
-        <section id="hero" class="h-screen flex items-center justify-center px-4 lg:px-16 relative overflow-hidden">
-            <div class="container mx-auto text-center relative z-10">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 text-primary-900 dark:text-primary-100">Selamatkan Makanan, Bantu Sesama</h1>
-                <p class="text-xl md:text-2xl mb-8 text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">Menghubungkan restoran dengan panti asuhan untuk mengurangi pembuangan makanan dan membantu yang membutuhkan.</p>
-                <a href="#" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Mulai Donasi</a>
-            </div>
-            <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="min-h-screen flex items-center py-16 px-4 lg:px-16 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
-            <div class="container mx-auto relative z-10">
-                <h2 class="text-4xl font-bold mb-12 text-center text-primary-900 dark:text-primary-100">Tentang MakanPeduli</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <p class="text-lg text-gray-700 dark:text-gray-300">MakanPeduli adalah platform inovatif yang menghubungkan restoran dengan kelebihan makanan berkualitas baik kepada panti asuhan yang membutuhkan. Kami bertujuan untuk mengurangi pembuangan makanan di Indonesia sambil membantu mereka yang kekurangan.</p>
-                        <p class="text-lg text-gray-700 dark:text-gray-300">Pembuangan makanan menjadi masalah yang serius di Indonesia. Berdasarkan data FAO, Indonesia menjadi salah satu negara dengan limbah makanan terbesar di dunia, dengan lebih dari 13 juta ton makanan terbuang setiap tahun. Ini bukan hanya berdampak pada lingkungan, tapi juga menyebabkan kerugian ekonomi hingga Rp213 triliun per tahun, sementara jutaan orang masih mengalami kelaparan.</p>
-                        <p class="text-lg text-gray-700 dark:text-gray-300">Dengan MakanPeduli, kita bisa bersama-sama mengatasi masalah pembuangan makanan dan kelaparan, menciptakan Indonesia yang lebih berkelanjutan dan peduli.</p>
-                        <div class="flex justify-center md:justify-start">
-                            <a href="#" class="bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg">Pelajari Lebih Lanjut</a>
-                        </div>
-                    </div>
-                    <div class="bg-white dark:bg-gray-700 p-8 rounded-2xl backdrop-filter backdrop-blur-lg bg-opacity-30 dark:bg-opacity-30 transform hover:scale-105 transition duration-300">
-                        <h3 class="text-2xl font-semibold mb-6 text-primary-900 dark:text-primary-100">Dampak Kami</h3>
-                        <ul class="space-y-4">
-                            <li class="flex items-center text-gray-700 dark:text-gray-300">
-                                <svg class="h-12 w-12 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Mengurangi pembuangan makanan hingga 50 ton per bulan, yang setara dengan memberikan makanan kepada lebih dari 10.000 orang setiap bulan.</span>
-                            </li>
-                            <li class="flex items-center text-gray-700 dark:text-gray-300">
-                                <svg class="h-12 w-12 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Membantu lebih dari 100 panti asuhan di seluruh Indonesia, yang sebelumnya sering kali kesulitan mendapatkan makanan yang layak untuk anak-anak asuh mereka.</span>
-                            </li>
-                            <li class="flex items-center text-gray-700 dark:text-gray-300">
-                                <svg class="h-12 w-12 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Mengurangi emisi karbon sebesar 1000 ton per tahun dengan mencegah makanan yang masih layak konsumsi terbuang dan menghasilkan gas metana di tempat pembuangan sampah.</span>
-                            </li>
-                            <li class="flex items-center text-gray-700 dark:text-gray-300">
-                                <svg class="h-12 w-12 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Memberikan pelatihan kepada restoran untuk mengelola kelebihan makanan secara lebih efektif, sehingga mengurangi limbah makanan dari sumbernya.</span>
-                            </li>
-                            <li class="flex items-center text-gray-700 dark:text-gray-300">
-                                <svg class="h-12 w-12 text-green-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                                </svg>
-                                <span>Berpartisipasi dalam berbagai kampanye sosial dan edukasi masyarakat tentang pentingnya mengurangi pemborosan makanan serta dampak positif dari donasi makanan berlebih.</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-primary-200 to-transparent opacity-30 dark:from-primary-800 dark:to-transparent"></div>
-            <div class="absolute bottom-0 right-0 w-64 h-64 bg-primary-300 rounded-full filter blur-3xl opacity-20 dark:bg-primary-700"></div>
-        </section>
-
-
-        <!-- How It Works Section -->
-        <section id="how-it-works" class="min-h-screen flex items-center py-16 px-4 lg:px-16 relative overflow-hidden">
-            <div class="container mx-auto relative z-10">
-                <h2 class="text-4xl font-bold mb-12 text-center text-primary-900 dark:text-primary-100">Cara Kerja</h2>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl backdrop-filter backdrop-blur-lg bg-opacity-50 dark:bg-opacity-50 transform hover:scale-105 transition duration-300">
-                        <div class="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-6">1</div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-900 dark:text-primary-100">Restoran Mendaftar</h3>
-                        <p class="text-gray-700 dark:text-gray-300">Restoran mendaftar dan menginformasikan kelebihan makanan yang masih layak konsumsi melalui aplikasi kami yang mudah digunakan.</p>
-                        <img src="/placeholder.svg?height=200&width=300" alt="Restoran Mendaftar" class="mt-6 rounded-lg shadow-md w-full h-40 object-cover">
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl backdrop-filter backdrop-blur-lg bg-opacity-50 dark:bg-opacity-50 transform hover:scale-105 transition duration-300">
-                        <div class="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-6">2</div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-900 dark:text-primary-100">Kami Menghubungkan</h3>
-                        <p class="text-gray-700 dark:text-gray-300">MakanPeduli menghubungkan restoran dengan panti asuhan terdekat yang membutuhkan makanan menggunakan algoritma cerdas kami.</p>
-                        <img src="/placeholder.svg?height=200&width=300" alt="Kami Menghubungkan" class="mt-6 rounded-lg shadow-md w-full h-40 object-cover">
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl backdrop-filter backdrop-blur-lg bg-opacity-50 dark:bg-opacity-50 transform hover:scale-105 transition duration-300">
-                        <div class="text-5xl font-bold text-primary-600 dark:text-primary-400 mb-6">3</div>
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-900 dark:text-primary-100">Makanan Tersampaikan</h3>
-                        <p class="text-gray-700 dark:text-gray-300">Makanan diantarkan ke panti asuhan oleh tim kami yang berdedikasi, mengurangi pembuangan dan membantu yang membutuhkan.</p>
-                        <img src="/placeholder.svg?height=200&width=300" alt="Makanan Tersampaikan" class="mt-6 rounded-lg shadow-md w-full h-40 object-cover">
-                    </div>
-                </div>
-            </div>
-            <div class="absolute top-0 right-0 w-96 h-96 bg-primary-200 rounded-full filter blur-3xl opacity-20 dark:bg-primary-800"></div>
-            <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-300 rounded-full filter blur-3xl opacity-20 dark:bg-primary-700"></div>
-        </section>
-
-        <!-- CTA Section -->
-        <section id="cta" class="min-h-screen flex items-center py-16 px-4 lg:px-16 bg-primary-600 dark:bg-primary-800 relative overflow-hidden">
-            <div class="container mx-auto text-center relative z-10">
-                <h2 class="text-4xl font-bold mb-6 text-white">Bergabunglah dalam Misi Kami</h2>
-                <p class="text-xl mb-12 text-white opacity-90 max-w-3xl mx-auto">Bersama, kita bisa membuat perubahan nyata untuk Indonesia yang lebih baik. Setiap tindakan kecil dapat membawa dampak besar bagi mereka yang membutuhkan.</p>
-                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
-                    <a href="#" class="bg-white text-primary-600 hover:bg-gray-100 font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Daftar Restoran</a>
-                    <a href="#" class="bg-primary-700 text-white hover:bg-primary-800 font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">Daftar Panti Asuhan</a>
-                </div>
-                <div class="mt-16 grid md:grid-cols-3 gap-8">
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 dark:bg-opacity-30">
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-900 dark:text-primary-100">1000+</h3>
-                        <p class="text-gray-700 dark:text-gray-300">Restoran Bergabung</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 dark:bg-opacity-30">
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-900 dark:text-primary-100">50.000+</h3>
-                        <p class="text-gray-700 dark:text-gray-300">Makanan Terselamatkan</p>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-30 dark:bg-opacity-30">
-                        <h3 class="text-2xl font-semibold mb-4 text-primary-900 dark:text-primary-100">100+</h3>
-                        <p class="text-gray-700 dark:text-gray-300">Panti Asuhan Terbantu</p>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-primary-500 to-transparent opacity-30"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-400 rounded-full filter blur-3xl opacity-20"></div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="min-h-screen flex items-center py-16 px-4 lg:px-16 relative overflow-hidden">
-            <div class="container mx-auto relative z-10">
-                <h2 class="text-4xl font-bold mb-12 text-center text-primary-900 dark:text-primary-100">Hubungi Kami</h2>
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-semibold text-primary-900 dark:text-primary-100">Kantor Kami</h3>
-                        <p class="text-gray-700 dark:text-gray-300">Jl. Peduli Sesama No. 123<br>Jakarta Pusat, 10110<br>Indonesia</p>
-                        <div class="flex items-center space-x-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                            </svg>
-                            <span class="text-gray-700 dark:text-gray-300">+62 21 1234 5678</span>
-                        </div>
-                        <div class="flex items-center space-x-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <span class="text-gray-700 dark:text-gray-300">info@makanpeduli.org</span>
-                        </div>
-                    </div>
-                    <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-xl backdrop-filter backdrop-blur-lg bg-opacity-50 dark:bg-opacity-50">
-                        <form class="space-y-6">
-                            <div>
-                                <label for="name" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Nama</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
-                            </div>
-                            <div>
-                                <label for="email" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required>
-                            </div>
-                            <div>
-                                <label for="message" class="block mb-2 text-sm font-medium text-gray-700 dark:text-gray-300">Pesan</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary-600 dark:bg-gray-700 dark:border-gray-600 dark:text-white" required></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1">Kirim Pesan</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="absolute top-0 left-0 w-64 h-64 bg-primary-200 rounded-full filter blur-3xl opacity-20 dark:bg-primary-800"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-300 rounded-full filter blur-3xl opacity-20 dark:bg-primary-700"></div>
-        </section>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makan Peduli - Solusi Inovatif Mengurangi Pembuangan Makanan di Indonesia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const html = document.documentElement;
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F46E5',
+                        secondary: '#10B981',
+                        tertiary: '#F59E0B',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .aurora-bg {
+            background:
+                radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(79, 70, 229, 0.15) 0%, transparent 30%),
+                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 30%);
+        }
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        .overlay-box {
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-x-hidden">
+    <nav class="fixed w-full bg-white bg-opacity-90 dark:bg-gray-900 dark:bg-opacity-90 shadow z-50 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary flex items-center">
+                <i data-lucide="utensils" class="w-8 h-8 mr-2"></i>
+                Makan Peduli
+            </a>
+            <div class="hidden md:flex space-x-4">
+                <a href="#about" class="hover:text-primary transition duration-300">Tentang</a>
+                <a href="#how-it-works" class="hover:text-primary transition duration-300">Cara Kerja</a>
+                <a href="#impact" class="hover:text-primary transition duration-300">Dampak</a>
+                <a href="#economics" class="hover:text-primary transition duration-300">Ekonomi</a>
+                <a href="#contact" class="hover:text-primary transition duration-300">Kontak</a>
+            </div>
+            <button class="bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300 flex items-center">
+                <i data-lucide="log-in" class="w-4 h-4 mr-2"></i>
+                Mulai Sekarang
+            </button>
+        </div>
+    </nav>
 
-        darkModeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-        });
+    <header class="relative min-h-screen flex items-center justify-center aurora-bg overflow-hidden">
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Transformasi Pembuangan Makanan menjadi Harapan</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Makan Peduli menghubungkan restoran dengan panti asuhan untuk mengurangi pembuangan makanan dan membantu yang membutuhkan, menciptakan solusi berkelanjutan untuk Indonesia.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition duration-300 flex items-center">
+                    <i data-lucide="play" class="w-5 h-5 mr-2"></i>
+                    Mulai Sekarang
+                </a>
+                <a href="#how-it-works" class="bg-white text-primary px-6 py-3 rounded-md hover:bg-opacity-90 transition duration-300 flex items-center">
+                    <i data-lucide="info" class="w-5 h-5 mr-2"></i>
+                    Pelajari Lebih Lanjut
+                </a>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent to-white dark:to-gray-900"></div>
+    </header>
 
-        // Check for saved theme preference or use system preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            html.classList.add('dark');
-        } else {
-            html.classList.remove('dark');
+    <section id="about" class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold mb-8 text-center">Tentang Makan Peduli</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg mb-6">Makan Peduli adalah platform inovatif yang mengatasi dua masalah kritis di Indonesia: pembuangan makanan dan kerawanan pangan. Dengan menghubungkan restoran yang memiliki kelebihan makanan dengan organisasi amal, kami menciptakan solusi yang menguntungkan semua pihak.</p>
+                    <p class="text-lg">Platform kami menggunakan teknologi canggih untuk mengoptimalkan distribusi makanan, memastikan bahwa makanan berkualitas baik mencapai mereka yang paling membutuhkan secara efisien dan tepat waktu.</p>
+                </div>
+                <div class="relative">
+                    <img src="https://i.ytimg.com/an_webp/0rwwXecwuj8/mqdefault_6s.webp?du=3000&sqp=CM-tzrcG&rs=AOn4CLCQdg-O5Ai9WsiHPwkk-K8WYHv5_g" alt="Food Donation" class="rounded-lg shadow-lg w-full h-full">
+                    <div class="absolute -bottom-6 -right-6 bg-secondary text-white p-4 rounded-lg flex items-center">
+                        <i data-lucide="utensils" class="w-8 h-8 mr-2"></i>
+                        <div>
+                            <p class="text-2xl font-bold">1000+</p>
+                            <p>Makanan Diselamatkan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-1/2 left-0 transform -translate-y-1/2 w-64 h-64 bg-primary opacity-10 rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary opacity-10 rounded-full filter blur-3xl"></div>
+    </section>
+
+    <section id="how-it-works" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold mb-12 text-center">Cara Kerja</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative overflow-hidden">
+                    <div class="text-4xl font-bold text-primary mb-4 flex items-center">
+                        <span class="mr-2">1</span>
+                        <i data-lucide="clipboard-list" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Restoran Mendaftar</h3>
+                    <p>Restoran mendaftar di platform kami dan menginformasikan makanan yang tersedia untuk disumbangkan.</p>
+                    <div class="absolute bottom-0 right-0 w-16 h-16 bg-primary opacity-10 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative overflow-hidden">
+                    <div class="text-4xl font-bold text-primary mb-4 flex items-center">
+                        <span class="mr-2">2</span>
+                        <i data-lucide="git-branch" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Kami Menghubungkan</h3>
+                    <p>Algoritma kami menghubungkan restoran dengan organisasi amal terdekat yang membutuhkan makanan.</p>
+                    <div class="absolute bottom-0 right-0 w-16 h-16 bg-secondary opacity-10 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative overflow-hidden">
+                    <div class="text-4xl font-bold text-primary mb-4 flex items-center">
+                        <span class="mr-2">3</span>
+                        <i data-lucide="truck" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-4">Makanan Disalurkan</h3>
+                    <p>Makanan diambil dan disalurkan ke panti asuhan atau komunitas yang membutuhkan dengan cepat dan efisien.</p>
+                    <div class="absolute bottom-0 right-0 w-16 h-16 bg-tertiary opacity-10 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white dark:from-gray-900 to-transparent"></div>
+        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
+    </section>
+
+    <section id="impact" class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold mb-12 text-center">Dampak Kami</h2>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg relative overflow-hidden">
+                    <i data-lucide="utensils" class="w-16 h-16 mx-auto mb-4 text-primary"></i>
+                    <div class="text-5xl font-bold text-primary mb-4">5000+</div>
+                    <p class="text-xl">Porsi Makanan Diselamatkan</p>
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-primary opacity-10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg relative overflow-hidden">
+                    <i data-lucide="home" class="w-16 h-16 mx-auto mb-4 text-secondary"></i>
+                    <div class="text-5xl font-bold text-secondary mb-4">100+</div>
+                    <p class="text-xl">Restoran Bergabung</p>
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-secondary opacity-10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg relative overflow-hidden">
+                    <i data-lucide="heart" class="w-16 h-16 mx-auto mb-4 text-tertiary"></i>
+                    <div class="text-5xl font-bold text-tertiary mb-4">50+</div>
+                    <p class="text-xl">Organisasi Amal Terhubung</p>
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-tertiary opacity-10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-gray-100 dark:from-gray-800 to-transparent"></div>
+    </section>
+
+    <section id="economics" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold mb-12 text-center">Dampak Ekonomi</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4">Mengurangi Pemborosan, Meningkatkan Efisiensi</h3>
+                    <p class="text-lg mb-6">Makan Peduli tidak hanya mengatasi masalah sosial, tetapi juga memberikan dampak positif pada ekonomi Indonesia. Dengan mengurangi pembuangan makanan, kami membantu meningkatkan efisiensi rantai pasokan makanan dan mengurangi biaya pengelolaan limbah.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-green-500"></i>
+                            Pengurangan biaya pengelolaan limbah
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-green-500"></i>
+                            Peningkatan efisiensi operasional restoran
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-green-500"></i>
+                            Kontribusi pada ekonomi sirkular
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <img src="https://i.ytimg.com/an_webp/0rwwXecwuj8/mqdefault_6s.webp?du=3000&sqp=CM-tzrcG&rs=AOn4CLCQdg-O5Ai9WsiHPwkk-K8WYHv5_g" alt="Economic Impact" class="rounded-lg shadow-lg w-full h-full">
+                    <div class="absolute -top-6 -left-6 bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg overlay-box">
+                        <h4 class="text-lg font-semibold mb-2">Penghematan Tahunan</h4>
+                        <p class="text-3xl font-bold text-green-500">Rp 500 Juta+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-1/2 right-0 transform -translate-y-1/2 w-64 h-64 bg-primary opacity-10 rounded-full filter blur-3xl"></div>
+    </section>
+
+    <section id="testimonials" class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold mb-12 text-center">Apa Kata Mereka</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative">
+                    <i data-lucide="quote" class="w-12 h-12 absolute top-4 left-4 text-gray-200 dark:text-gray-600"></i>
+                    <p class="mb-4 relative z-10">"Makan Peduli membantu kami mengurangi pembuangan makanan dan berkontribusi pada masyarakat. Ini adalah solusi yang luar biasa dan membantu kami meningkatkan citra restoran kami!"</p>
+                    <div class="flex items-center">
+                        <img src="/placeholder.svg?height=50&width=50" alt="Budi" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold">Budi Santoso</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Pemilik Restoran Cita Rasa</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative">
+                    <i data-lucide="quote" class="w-12 h-12 absolute top-4 left-4 text-gray-200 dark:text-gray-600"></i>
+                    <p class="mb-4 relative z-10">"Berkat Makan Peduli, kami dapat menyediakan makanan berkualitas untuk anak-anak di panti asuhan kami secara teratur. Ini sangat membantu dalam mengelola sumber daya kami."</p>
+                    <div class="flex items-center">
+                        <img src="/placeholder.svg?height=50&width=50" alt="Siti" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <p class="font-semibold">Siti Rahayu</p>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">Pengurus Panti Asuhan Kasih Ibu</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-4xl font-bold mb-12 text-center">Hubungi Kami</h2>
+            <div class="max-w-lg mx-auto bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg">
+                <form>
+                    <div class="mb-4">
+                        <label for="name" class="block mb-2 font-semibold">Nama</label>
+                        <input type="text" id="name" class="w-full px-3 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block mb-2 font-semibold">Email</label>
+                        <input type="email" id="email" class="w-full px-3 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block mb-2 font-semibold">Pesan</label>
+                        <textarea id="message" rows="4" class="w-full px-3 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-600" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300 flex items-center justify-center">
+                        <i data-lucide="send" class="w-5 h-5 mr-2"></i>
+                        Kirim Pesan
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-10 rounded-full filter blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary opacity-10 rounded-full filter blur-3xl"></div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Makan Peduli</h3>
+                    <p class="text-sm">Menghubungkan makanan berlebih dengan mereka yang membutuhkan.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-sm hover:text-primary transition duration-300">Tentang Kami</a></li>
+                        <li><a href="#how-it-works" class="text-sm hover:text-primary transition duration-300">Cara Kerja</a></li>
+                        <li><a href="#impact" class="text-sm hover:text-primary transition duration-300">Dampak</a></li>
+                        <li><a href="#contact" class="text-sm hover:text-primary transition duration-300">Kontak</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Hubungi Kami</h3>
+                    <p class="text-sm mb-2">Email: info@makanpeduli.id</p>
+                    <p class="text-sm mb-2">Telepon: +62 21 1234 5678</p>
+                    <p class="text-sm">Alamat: Jl. Sudirman No. 123, Jakarta</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-primary transition duration-300">
+                            <i data-lucide="facebook" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-primary transition duration-300">
+                            <i data-lucide="twitter" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-primary transition duration-300">
+                            <i data-lucide="instagram" class="w-6 h-6"></i>
+                        </a>
+                        <a href="#" class="text-white hover:text-primary transition duration-300">
+                            <i data-lucide="linkedin" class="w-6 h-6"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p>&copy; 2024 Makan Peduli. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add particle effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.width = Math.random() * 5 + 'px';
+            particle.style.height = particle.style.width;
+            particle.style.background = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.5)`;
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.top = Math.random() * 100 + 'vh';
+            document.body.appendChild(particle);
+
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
         }
 
-        // Update localStorage on theme change
-        const observer = new MutationObserver(() => {
-            if (html.classList.contains('dark')) {
-                localStorage.theme = 'dark';
-            } else {
-                localStorage.theme = 'light';
-            }
-        });
+        setInterval(createParticle, 200);
 
-        observer.observe(html, { attributes: true, attributeFilter: ['class'] });
-
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        // Animate sections on scroll
-        gsap.utils.toArray('section:not(#hero)').forEach(section => {
-            gsap.from(section.querySelectorAll('h2, p, .grid > div'), {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.2,
-                scrollTrigger: {
-                    trigger: section,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none reverse'
-                }
-            });
-        });
-
-        // Subtle background animation
-        gsap.to('.bg-primary-200, .bg-primary-300, .bg-primary-400', {
-            scale: 1.1,
-            rotation: 5,
-            duration: 10,
-            repeat: -1,
-            yoyo: true,
-            ease: 'sine.inOut'
-        });
+        // Initialize Lucide icons
+        lucide.createIcons();
     </script>
-</x-app-layout>
+</body>
+</html>

@@ -14,23 +14,9 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white ">
+    <body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
         <header class="fixed w-full bg-white dark:bg-gray-900 shadow-sm z-50">
-            <nav class="container mx-auto px-6 py-3">
-                <div class="flex justify-between items-center">
-                    <a href="#" class="text-2xl font-bold text-primary-600 dark:text-primary-400">MakanPeduli</a>
-                    <div class="flex items-center space-x-4">
-                        <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Tentang</a>
-                        <a href="#how-it-works" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Cara Kerja</a>
-                        <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400">Kontak</a>
-                        <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-800 dark:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </nav>
+            <x-floating-navbar />
         </header>
 
         <main>
