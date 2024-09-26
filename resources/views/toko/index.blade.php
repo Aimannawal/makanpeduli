@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Ini Adalah Halaman Admin</h1>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <h1>Selamat datang, {{ auth()->user()->name }}!</h1>
+    <a href="{{ route('toko.create') }}" class="btn btn-primary">Buat Permintaan Donasi</a>
+
+    @if (session('success'))
+        <div class="alert alert-success mt-3">
+            {{ session('success') }}
+        </div>
+    @endif
+</div>
+@endsection

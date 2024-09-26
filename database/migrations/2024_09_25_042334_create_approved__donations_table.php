@@ -11,12 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('approved__donations', function (Blueprint $table) {
+        Schema::create('approved_donations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('donation_request_id')->constrained('donation_requests')->onDelete('cascade'); // Referensi ke pengajuan donasi
-            $table->string('recipient_name'); 
-            $table->string('food_photo'); 
+            $table->unsignedBigInteger('donation_request_id');
+            $table->string('recipient_name');
+            $table->string('food_photo');
             $table->timestamps();
+        
+            // Definisikan kunci asing dengan nama tabel yang sesuai
+            $table->foreign('donation_request_id')
+                  ->references('id')->on('donnation__requests')
+                  ->onDelete('cascade'); // Harus sama dengan nama tabel yang benar
         });
     }
 
