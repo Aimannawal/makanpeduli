@@ -15,19 +15,6 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-        <header class="bg-white shadow-md">
-            <nav class="px-6 py-3 flex justify-between items-center fixed z-50 left-0 top-0 right-0 bg-white">
-                <div class="text-2xl font-bold text-primary">Makan Peduli</div>
-                <div class="hidden md:flex space-x-4">
-                    <a href="#home" class="text-gray-600 hover:text-primary">Home</a>
-                    <a href="#about" class="text-gray-600 hover:text-primary">About</a>
-                    <a href="#features" class="text-gray-600 hover:text-primary">Features</a>
-                    <a href="#impact" class="text-gray-600 hover:text-primary">Impact</a>
-                    <a href="#contact" class="text-gray-600 hover:text-primary">Contact</a>
-                </div>
-                <a href="{{ route('toko.create') }}" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300">Join Now</a>
-            </nav>
-        </header>
 
         <main>
             {{ $slot }}
