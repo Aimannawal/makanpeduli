@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Approved_Donation;
 use App\Models\Donnation_Request;
+use App\Models\Minta; // Model untuk tabel mintas
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,9 +36,18 @@ class DonationController extends Controller
 
     // Admin view to approve donation requests
     public function adminIndex()
+{
+    // Mengambil semua permintaan donasi
+    $donationRequests = Donnation_Request::all();
+    return view('admin.index', compact('donationRequests'));
+}
+
+
+    // Admin view for 'minta'
+    public function adminMinta()
     {
-        $donationRequests = Donnation_Request::where('status', 'pending')->get();
-        return view('admin.index', compact('donationRequests'));
+        $mintas = Minta::all(); // Mengambil semua data dari tabel mintas
+        return view('admin.minta', compact('mintas'));
     }
 
     // Admin approves donation and assigns recipient
@@ -63,4 +73,13 @@ class DonationController extends Controller
 
         return redirect()->route('admin.index')->with('success', 'Donation approved and recipient assigned!');
     }
+
+    // Mark a request as done
+    public function markAsDone(Minta $minta)
+{
+    // Pastikan Anda menggunakan string yang valid
+    $minta->update(['status' => 'selesai']); // Pastikan 'selesai' sudah didefinisikan dengan benar di database
+    return redirect()->route('admin.minta')->with('success', 'Permintaan donasi telah ditandai sebagai selesai!');
+}
+
 }

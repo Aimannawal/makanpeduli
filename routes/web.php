@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DonationController;
+use App\Http\Controllers\MintaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
@@ -9,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::resource('minta', MintaController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -23,8 +26,11 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'role:admin'])->group(function(){
     // Route::get('/admin/index', [AdminController::class, 'index']);  
     // Route::resource('admin', AdminController::class);
-    Route::get('/admin/index', [DonationController::class, 'adminIndex'])->name('admin.index');
-    Route::post('/admin/approve/{donationRequest}', [DonationController::class, 'approveRequest'])->name('admin.approve');
+Route::get('/admin/index', [DonationController::class, 'adminIndex'])->name('admin.index');
+Route::post('/admin/approve/{donationRequest}', [DonationController::class, 'approveRequest'])->name('admin.approve');
+Route::get('/admin/minta', [DonationController::class, 'adminMinta'])->name('admin.minta'); // Rute untuk melihat permintaan
+Route::post('/admin/minta/{minta}/done', [DonationController::class, 'markAsDone'])->name('admin.markAsDone');
+
 });
 
 Route::middleware(['auth', 'role:toko'])->group(function(){

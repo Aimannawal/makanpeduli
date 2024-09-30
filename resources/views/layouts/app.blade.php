@@ -63,6 +63,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Food Donation</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,16 +71,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
+                <!-- Check if user is authenticated -->
                 @if(Auth::check())
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('toko.index') }}">Toko</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin.index') }}">Admin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}">Logout</a>
-                    </li>
+                    @if(Auth::user()->is_admin)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.index') }}">Admin Dashboard</a>
+                        </li>
+                    @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('toko.index') }}">Toko Dashboard</a>
+                        </li>
+                    @endif
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+    
+                        <x-responsive-nav-link :href="route('logout')"
+                                onclick="event.preventDefault();
+                                            this.closest('form').submit();">
+                            {{ __('Log Out') }}
+                        </x-responsive-nav-link>
+                    </form>
                 @else
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">Login</a>
@@ -89,10 +100,38 @@
         </div>
     </nav>
 
+    <!-- Main content -->
     <div class="container mt-5">
+        <!-- Display success messages -->
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        <!-- Display error messages -->
+        @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <!-- Dynamic content -->
         @yield('content')
     </div>
 
+    <!-- Footer (optional) -->
+    <footer class="bg-light text-center text-lg-start mt-5">
+        <div class="text-center p-3">
+            © 2024 Food Donation - All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
