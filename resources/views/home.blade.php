@@ -1,336 +1,326 @@
-<!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makan Peduli - Solusi Inovatif Mengurangi Pembuangan Makanan di Indonesia</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#4F46E5',
-                        secondary: '#10B981',
-                        tertiary: '#F59E0B',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-        body {
-            font-family: 'Poppins', sans-serif;
-        }
-        .aurora-bg {
-            background:
-                radial-gradient(circle at 20% 20%, rgba(79, 70, 229, 0.15) 0%, transparent 30%),
-                radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 30%),
-                radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 30%),
-                radial-gradient(circle at 80% 80%, rgba(79, 70, 229, 0.15) 0%, transparent 30%),
-                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 30%);
-        }
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-        .overlay-box {
-            backdrop-filter: blur(5px);
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-    </style>
-</head>
-<body class="font-sans antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-white overflow-x-hidden">
-    <nav class="fixed w-full bg-white bg-opacity-90 dark:bg-gray-900 dark:bg-opacity-90 shadow z-50 backdrop-blur-md">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-primary flex items-center">
-                <i data-lucide="utensils" class="w-8 h-8 mr-2"></i>
-                Makan Peduli
-            </a>
-            <div class="hidden md:flex space-x-4">
-                <a href="#about" class="hover:text-primary transition duration-300">Tentang</a>
-                <a href="#how-it-works" class="hover:text-primary transition duration-300">Cara Kerja</a>
-                <a href="#impact" class="hover:text-primary transition duration-300">Dampak</a>
-                <a href="#economics" class="hover:text-primary transition duration-300">Ekonomi</a>
-                <a href="#contact" class="hover:text-primary transition duration-300">Kontak</a>
-            </div>
-            <button class="bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300 flex items-center">
-                <i data-lucide="log-in" class="w-4 h-4 mr-2"></i>
-                Mulai Sekarang
-            </button>
-        </div>
+<x-app-layout>
+
+<div class="bg-white min-h-screen text-gray-800">
+    <nav class="container mx-auto px-4 py-6 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <svg class="w-8 h-8 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+        <span class="text-2xl font-bold">FoodShare</span>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#" class="hover:text-green-500 transition-colors">Tentang Kami</a>
+        <a href="#" class="hover:text-green-500 transition-colors">Cara Kerja</a>
+        <a href="#" class="hover:text-green-500 transition-colors">Bergabung</a>
+        <a href="#" class="hover:text-green-500 transition-colors">Kontak</a>
+      </div>
+      <div class="flex space-x-4">
+        <button class="hidden md:inline-flex border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition-colors">Login</button>
+        <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Mulai Sumbang</button>
+      </div>
     </nav>
 
-    <header class="relative min-h-screen flex items-center justify-center aurora-bg overflow-hidden">
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Transformasi Pembuangan Makanan menjadi Harapan</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">Makan Peduli menghubungkan restoran dengan panti asuhan untuk mengurangi pembuangan makanan dan membantu yang membutuhkan, menciptakan solusi berkelanjutan untuk Indonesia.</p>
-            <div class="flex justify-center space-x-4">
-                <a href="#" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-opacity-90 transition duration-300 flex items-center">
-                    <i data-lucide="play" class="w-5 h-5 mr-2"></i>
-                    Mulai Sekarang
-                </a>
-                <a href="#how-it-works" class="bg-white text-primary px-6 py-3 rounded-md hover:bg-opacity-90 transition duration-300 flex items-center">
-                    <i data-lucide="info" class="w-5 h-5 mr-2"></i>
-                    Pelajari Lebih Lanjut
-                </a>
-            </div>
+    <main class="container mx-auto px-4 py-20 text-center w-full flex flex-col items-center">
+      <div class="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        BARU <span class="ml-2">Bantu Indonesia dengan mengurangi limbah makanan</span>
+      </div>
+
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 max-w-[45rem] text-center">
+        Sumbangkan <span class="text-green-500">makanan berlebih</span> untuk membantu sesama
+      </h1>
+
+      <p class="text-xl md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+        Bergabunglah dengan FoodShare, sebuah platform yang menghubungkan restoran dengan masyarakat yang membutuhkan makanan. Dengan cara ini, kita bersama-sama mengurangi limbah makanan dan membantu masyarakat yang kekurangan.
+      </p>
+
+      <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-12">
+        <button class="bg-green-500 hover:bg-green-600 text-white text-lg px-8 py-4 rounded">Mulai Sumbang Sekarang</button>
+        <button class="border border-green-500 text-green-500 flex items-center text-lg px-8 py-4 rounded hover:bg-green-500 hover:text-white transition-colors">
+          Cara Kerja
+          <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="flex justify-center items-center space-x-4 text-gray-400">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>
+        <span>Coba gratis selama 14 hari</span>
+        <span>•</span>
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+          <line x1="1" y1="10" x2="23" y2="10" />
+        </svg>
+        <span>Tidak perlu kartu kredit</span>
+      </div>
+    </main>
+  </div>
+
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-4 text-center w-full flex flex-col items-center">
+      <div class="inline-block bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        INFO PENTING <span class="ml-2">Bagaimana FoodShare Membantu Masyarakat</span>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 max-w-2xl text-center">
+        Kenali <span class="text-green-500">cara kerja dan dampak positif</span> FoodShare dalam kehidupan masyarakat
+      </h2>
+
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+        Setiap hari, jutaan ton makanan terbuang sia-sia, sementara masih banyak orang yang mengalami kelaparan. FoodShare hadir untuk menjadi solusi efektif dalam mendistribusikan makanan berlebih kepada masyarakat yang membutuhkan. Pelajari lebih lanjut bagaimana kita bekerja sama dengan berbagai restoran, toko, dan relawan dalam mengurangi limbah makanan serta meningkatkan kesejahteraan masyarakat.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        <!-- Card 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Menghubungkan Donor dan Penerima</h3>
+          <p class="text-gray-600">
+            FoodShare menggunakan teknologi berbasis web yang memungkinkan restoran, toko, dan perorangan menyumbangkan makanan dengan mudah. Kami menghubungkan donatur dengan lembaga atau individu yang membutuhkan, memastikan tidak ada makanan yang terbuang sia-sia.
+          </p>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-b from-transparent to-white dark:to-gray-900"></div>
-    </header>
 
-    <section id="about" class="py-20 relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-4xl font-bold mb-8 text-center">Tentang Makan Peduli</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-lg mb-6">Makan Peduli adalah platform inovatif yang mengatasi dua masalah kritis di Indonesia: pembuangan makanan dan kerawanan pangan. Dengan menghubungkan restoran yang memiliki kelebihan makanan dengan organisasi amal, kami menciptakan solusi yang menguntungkan semua pihak.</p>
-                    <p class="text-lg">Platform kami menggunakan teknologi canggih untuk mengoptimalkan distribusi makanan, memastikan bahwa makanan berkualitas baik mencapai mereka yang paling membutuhkan secara efisien dan tepat waktu.</p>
-                </div>
-                <div class="relative">
-                    <img src="https://i.ytimg.com/an_webp/0rwwXecwuj8/mqdefault_6s.webp?du=3000&sqp=CM-tzrcG&rs=AOn4CLCQdg-O5Ai9WsiHPwkk-K8WYHv5_g" alt="Food Donation" class="rounded-lg shadow-lg w-full h-full">
-                    <div class="absolute -bottom-6 -right-6 bg-secondary text-white p-4 rounded-lg flex items-center">
-                        <i data-lucide="utensils" class="w-8 h-8 mr-2"></i>
-                        <div>
-                            <p class="text-2xl font-bold">1000+</p>
-                            <p>Makanan Diselamatkan</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Card 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Proses yang Cepat dan Mudah</h3>
+          <p class="text-gray-600">
+            Kami memastikan bahwa donasi makanan dilakukan dengan proses yang cepat dan efisien. Semua donasi di FoodShare dicatat dengan baik, dan pengambilan makanan dilakukan oleh relawan dalam waktu sesingkat mungkin untuk menjaga kualitas makanan tetap terjaga.
+          </p>
         </div>
-        <div class="absolute top-1/2 left-0 transform -translate-y-1/2 w-64 h-64 bg-primary opacity-10 rounded-full filter blur-3xl"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary opacity-10 rounded-full filter blur-3xl"></div>
-    </section>
 
-    <section id="how-it-works" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-4xl font-bold mb-12 text-center">Cara Kerja</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative overflow-hidden">
-                    <div class="text-4xl font-bold text-primary mb-4 flex items-center">
-                        <span class="mr-2">1</span>
-                        <i data-lucide="clipboard-list" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4">Restoran Mendaftar</h3>
-                    <p>Restoran mendaftar di platform kami dan menginformasikan makanan yang tersedia untuk disumbangkan.</p>
-                    <div class="absolute bottom-0 right-0 w-16 h-16 bg-primary opacity-10 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
-                </div>
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative overflow-hidden">
-                    <div class="text-4xl font-bold text-primary mb-4 flex items-center">
-                        <span class="mr-2">2</span>
-                        <i data-lucide="git-branch" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4">Kami Menghubungkan</h3>
-                    <p>Algoritma kami menghubungkan restoran dengan organisasi amal terdekat yang membutuhkan makanan.</p>
-                    <div class="absolute bottom-0 right-0 w-16 h-16 bg-secondary opacity-10 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
-                </div>
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative overflow-hidden">
-                    <div class="text-4xl font-bold text-primary mb-4 flex items-center">
-                        <span class="mr-2">3</span>
-                        <i data-lucide="truck" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-2xl font-semibold mb-4">Makanan Disalurkan</h3>
-                    <p>Makanan diambil dan disalurkan ke panti asuhan atau komunitas yang membutuhkan dengan cepat dan efisien.</p>
-                    <div class="absolute bottom-0 right-0 w-16 h-16 bg-tertiary opacity-10 rounded-full transform translate-x-1/2 translate-y-1/2"></div>
-                </div>
-            </div>
+        <!-- Card 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-3-3.87V10a5 5 0 0 0-5-5 5 5 0 0 0-5 5v5.13A4 4 0 0 0 4 19v2" />
+              <circle cx="12" cy="23" r="1" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Keamanan dan Kualitas Terjamin</h3>
+          <p class="text-gray-600">
+            Keamanan dan kualitas makanan adalah prioritas kami. Kami memastikan bahwa semua makanan yang disumbangkan masih dalam kondisi baik dan layak untuk dikonsumsi. Relawan kami juga dilatih untuk menangani makanan dengan cara yang higienis.
+          </p>
         </div>
-        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white dark:from-gray-900 to-transparent"></div>
-        <div class="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
-    </section>
 
-    <section id="impact" class="py-20 relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-4xl font-bold mb-12 text-center">Dampak Kami</h2>
-            <div class="grid md:grid-cols-3 gap-8 text-center">
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg relative overflow-hidden">
-                    <i data-lucide="utensils" class="w-16 h-16 mx-auto mb-4 text-primary"></i>
-                    <div class="text-5xl font-bold text-primary mb-4">5000+</div>
-                    <p class="text-xl">Porsi Makanan Diselamatkan</p>
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-primary opacity-10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg relative overflow-hidden">
-                    <i data-lucide="home" class="w-16 h-16 mx-auto mb-4 text-secondary"></i>
-                    <div class="text-5xl font-bold text-secondary mb-4">100+</div>
-                    <p class="text-xl">Restoran Bergabung</p>
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-secondary opacity-10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                </div>
-                <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg relative overflow-hidden">
-                    <i data-lucide="heart" class="w-16 h-16 mx-auto mb-4 text-tertiary"></i>
-                    <div class="text-5xl font-bold text-tertiary mb-4">50+</div>
-                    <p class="text-xl">Organisasi Amal Terhubung</p>
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-tertiary opacity-10 rounded-full transform -translate-x-1/2 -translate-y-1/2"></div>
-                </div>
-            </div>
+        <!-- Card 4 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-purple-100 text-purple-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 0 1-1.732V5a2 2 0 0 0-1-1.732L12 1 3 3.268A2 2 0 0 0 2 5v8.268a2 2 0 0 0 1 1.732l9 5 9-5z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Kerjasama dengan Berbagai Pihak</h3>
+          <p class="text-gray-600">
+            Kami bekerja sama dengan berbagai organisasi, restoran, dan supermarket untuk memastikan distribusi makanan dapat menjangkau daerah-daerah yang paling membutuhkan. Kami juga membuka peluang bagi Anda untuk bergabung sebagai relawan.
+          </p>
         </div>
-        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-gray-100 dark:from-gray-800 to-transparent"></div>
-    </section>
 
-    <section id="economics" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-4xl font-bold mb-12 text-center">Dampak Ekonomi</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-4">Mengurangi Pemborosan, Meningkatkan Efisiensi</h3>
-                    <p class="text-lg mb-6">Makan Peduli tidak hanya mengatasi masalah sosial, tetapi juga memberikan dampak positif pada ekonomi Indonesia. Dengan mengurangi pembuangan makanan, kami membantu meningkatkan efisiensi rantai pasokan makanan dan mengurangi biaya pengelolaan limbah.</p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center">
-                            <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-green-500"></i>
-                            Pengurangan biaya pengelolaan limbah
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-green-500"></i>
-                            Peningkatan efisiensi operasional restoran
-                        </li>
-                        <li class="flex items-center">
-                            <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-green-500"></i>
-                            Kontribusi pada ekonomi sirkular
-                        </li>
-                    </ul>
-                </div>
-                <div class="relative">
-                    <img src="https://i.ytimg.com/an_webp/0rwwXecwuj8/mqdefault_6s.webp?du=3000&sqp=CM-tzrcG&rs=AOn4CLCQdg-O5Ai9WsiHPwkk-K8WYHv5_g" alt="Economic Impact" class="rounded-lg shadow-lg w-full h-full">
-                    <div class="absolute -top-6 -left-6 bg-white dark:bg-gray-700 p-4 rounded-lg shadow-lg overlay-box">
-                        <h4 class="text-lg font-semibold mb-2">Penghematan Tahunan</h4>
-                        <p class="text-3xl font-bold text-green-500">Rp 500 Juta+</p>
-                    </div>
-                </div>
-            </div>
+        <!-- Card 5 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-yellow-100 text-yellow-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 3v18h18V3H3zm3 6h12M3 12h18" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Transparansi dan Akuntabilitas</h3>
+          <p class="text-gray-600">
+            Kami sangat menghargai kepercayaan yang diberikan kepada kami. Semua donasi dan proses distribusi dicatat dengan baik dan dapat diakses oleh para donatur untuk melihat ke mana makanan mereka disalurkan.
+          </p>
         </div>
-        <div class="absolute top-1/2 right-0 transform -translate-y-1/2 w-64 h-64 bg-primary opacity-10 rounded-full filter blur-3xl"></div>
-    </section>
 
-    <section id="testimonials" class="py-20 relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-4xl font-bold mb-12 text-center">Apa Kata Mereka</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative">
-                    <i data-lucide="quote" class="w-12 h-12 absolute top-4 left-4 text-gray-200 dark:text-gray-600"></i>
-                    <p class="mb-4 relative z-10">"Makan Peduli membantu kami mengurangi pembuangan makanan dan berkontribusi pada masyarakat. Ini adalah solusi yang luar biasa dan membantu kami meningkatkan citra restoran kami!"</p>
-                    <div class="flex items-center">
-                        <img src="/placeholder.svg?height=50&width=50" alt="Budi" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <p class="font-semibold">Budi Santoso</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-300">Pemilik Restoran Cita Rasa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-lg relative">
-                    <i data-lucide="quote" class="w-12 h-12 absolute top-4 left-4 text-gray-200 dark:text-gray-600"></i>
-                    <p class="mb-4 relative z-10">"Berkat Makan Peduli, kami dapat menyediakan makanan berkualitas untuk anak-anak di panti asuhan kami secara teratur. Ini sangat membantu dalam mengelola sumber daya kami."</p>
-                    <div class="flex items-center">
-                        <img src="/placeholder.svg?height=50&width=50" alt="Siti" class="w-12 h-12 rounded-full mr-4">
-                        <div>
-                            <p class="font-semibold">Siti Rahayu</p>
-                            <p class="text-sm text-gray-600 dark:text-gray-300">Pengurus Panti Asuhan Kasih Ibu</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Card 6 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-teal-100 text-teal-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Dampak Sosial Positif</h3>
+          <p class="text-gray-600">
+            Selain mengurangi limbah makanan, FoodShare juga berfokus pada menciptakan dampak sosial positif. Kami percaya bahwa setiap orang berhak untuk mendapatkan akses pada makanan yang layak, dan melalui FoodShare kita bisa membuat perbedaan nyata.
+          </p>
         </div>
-        <div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="contact" class="py-20 bg-gray-100 dark:bg-gray-800 relative overflow-hidden">
-        <div class="container mx-auto px-6 relative z-10">
-            <h2 class="text-4xl font-bold mb-12 text-center">Hubungi Kami</h2>
-            <div class="max-w-lg mx-auto bg-white dark:bg-gray-700 p-8 rounded-lg shadow-lg">
-                <form>
-                    <div class="mb-4">
-                        <label for="name" class="block mb-2 font-semibold">Nama</label>
-                        <input type="text" id="name" class="w-full px-3 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-600" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="block mb-2 font-semibold">Email</label>
-                        <input type="email" id="email" class="w-full px-3 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-600" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="message" class="block mb-2 font-semibold">Pesan</label>
-                        <textarea id="message" rows="4" class="w-full px-3 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-600" required></textarea>
-                    </div>
-                    <button type="submit" class="w-full bg-primary text-white px-4 py-2 rounded-md hover:bg-opacity-90 transition duration-300 flex items-center justify-center">
-                        <i data-lucide="send" class="w-5 h-5 mr-2"></i>
-                        Kirim Pesan
-                    </button>
-                </form>
-            </div>
+  <!-- Section 2: Keunggulan FoodShare -->
+<section class="bg-white py-20">
+    <div class="container mx-auto px-4 text-center w-full flex flex-col items-center">
+      <div class="inline-block bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        KEUNGGULAN <span class="ml-2">Kenapa Memilih FoodShare?</span>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 max-w-2xl text-center">
+        Keunggulan <span class="text-green-500">yang kami tawarkan</span> untuk donatur dan penerima manfaat
+      </h2>
+
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+        FoodShare dirancang untuk menjadi lebih dari sekadar platform distribusi makanan. Kami memberikan keunggulan bagi para pengguna kami melalui teknologi, kemudahan akses, dan kemitraan strategis.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        <!-- Feature 1 -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M3 3h18v18H3zM3 12h18M12 3v18" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Platform User-Friendly</h3>
+          <p class="text-gray-600">
+            Kami menciptakan platform yang mudah digunakan untuk siapa saja, dari pemilik restoran hingga masyarakat yang membutuhkan. Semua orang dapat mendaftar, berdonasi, atau menerima makanan dengan proses yang cepat dan sederhana.
+          </p>
         </div>
-        <div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-10 rounded-full filter blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary opacity-10 rounded-full filter blur-3xl"></div>
-    </section>
 
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Makan Peduli</h3>
-                    <p class="text-sm">Menghubungkan makanan berlebih dengan mereka yang membutuhkan.</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Tautan Cepat</h3>
-                    <ul class="space-y-2">
-                        <li><a href="#about" class="text-sm hover:text-primary transition duration-300">Tentang Kami</a></li>
-                        <li><a href="#how-it-works" class="text-sm hover:text-primary transition duration-300">Cara Kerja</a></li>
-                        <li><a href="#impact" class="text-sm hover:text-primary transition duration-300">Dampak</a></li>
-                        <li><a href="#contact" class="text-sm hover:text-primary transition duration-300">Kontak</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Hubungi Kami</h3>
-                    <p class="text-sm mb-2">Email: info@makanpeduli.id</p>
-                    <p class="text-sm mb-2">Telepon: +62 21 1234 5678</p>
-                    <p class="text-sm">Alamat: Jl. Sudirman No. 123, Jakarta</p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-semibold mb-4">Ikuti Kami</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-white hover:text-primary transition duration-300">
-                            <i data-lucide="facebook" class="w-6 h-6"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-primary transition duration-300">
-                            <i data-lucide="twitter" class="w-6 h-6"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-primary transition duration-300">
-                            <i data-lucide="instagram" class="w-6 h-6"></i>
-                        </a>
-                        <a href="#" class="text-white hover:text-primary transition duration-300">
-                            <i data-lucide="linkedin" class="w-6 h-6"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
-                <p>&copy; 2024 Makan Peduli. Hak Cipta Dilindungi.</p>
-            </div>
+        <!-- Feature 2 -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Pengambilan Mudah dan Terjadwal</h3>
+          <p class="text-gray-600">
+            Pengambilan makanan dijadwalkan secara optimal sehingga donatur tidak terganggu aktivitasnya, dan penerima manfaat tetap mendapatkan makanan pada waktu yang tepat dengan kualitas yang terjaga.
+          </p>
         </div>
-    </footer>
 
-    <script>
-        // Add particle effect
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.classList.add('particle');
-            particle.style.width = Math.random() * 5 + 'px';
-            particle.style.height = particle.style.width;
-            particle.style.background = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.5)`;
-            particle.style.left = Math.random() * 100 + 'vw';
-            particle.style.top = Math.random() * 100 + 'vh';
-            document.body.appendChild(particle);
+        <!-- Feature 3 -->
+        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+          <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mb-6">
+            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 8v4h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Pengukuran Dampak Sosial</h3>
+          <p class="text-gray-600">
+            FoodShare menggunakan sistem pengukuran dampak untuk mengetahui seberapa banyak makanan yang berhasil didistribusikan dan berapa banyak orang yang terbantu. Hal ini memberi rasa puas kepada donatur bahwa kontribusinya memberi manfaat nyata.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            setTimeout(() => {
-                particle.remove();
-            }, 5000);
-        }
+  <!-- Section 3: Testimoni Pengguna -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-4 text-center w-full flex flex-col items-center">
+      <div class="inline-block bg-pink-100 text-pink-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        TESTIMONI <span class="ml-2">Apa Kata Mereka Tentang FoodShare?</span>
+      </div>
 
-        setInterval(createParticle, 200);
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 max-w-2xl text-center">
+        Cerita <span class="text-green-500">pengalaman nyata</span> dari pengguna FoodShare
+      </h2>
 
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
-</body>
-</html>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+        Kami bangga dapat membantu menghubungkan masyarakat dengan makanan yang layak konsumsi. Berikut beberapa cerita dari mereka yang telah merasakan dampak positif menggunakan FoodShare.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
+        <!-- Testimonial 1 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <p class="text-gray-600 mb-4">
+            "FoodShare telah menjadi penyelamat bagi saya dan keluarga. Dengan adanya platform ini, kami tidak perlu khawatir lagi mengenai makanan sehari-hari."
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="https://via.placeholder.com/50" alt="User photo" class="w-12 h-12 rounded-full">
+            <div>
+              <p class="text-lg font-semibold">Rahma</p>
+              <p class="text-sm text-gray-500">Penerima Manfaat</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <p class="text-gray-600 mb-4">
+            "Sebagai pemilik restoran, saya merasa sangat lega karena makanan yang berlebih bisa bermanfaat bagi orang lain, daripada terbuang begitu saja."
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="https://via.placeholder.com/50" alt="User photo" class="w-12 h-12 rounded-full">
+            <div>
+              <p class="text-lg font-semibold">Andi</p>
+              <p class="text-sm text-gray-500">Pemilik Restoran</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <p class="text-gray-600 mb-4">
+            "Saya senang bisa menjadi bagian dari FoodShare sebagai relawan. Rasanya sangat memuaskan bisa membantu orang lain, dan prosesnya sangat teratur."
+          </p>
+          <div class="flex items-center space-x-4">
+            <img src="https://via.placeholder.com/50" alt="User photo" class="w-12 h-12 rounded-full">
+            <div>
+              <p class="text-lg font-semibold">Budi</p>
+              <p class="text-sm text-gray-500">Relawan</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: FAQ -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto px-4 text-center w-full flex flex-col items-center">
+      <div class="inline-block bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        PERTANYAAN UMUM <span class="ml-2">Jawaban untuk semua pertanyaan Anda</span>
+      </div>
+
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 max-w-2xl text-center">
+        Pertanyaan yang sering <span class="text-green-500">ditanyakan</span> tentang FoodShare
+      </h2>
+
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-12">
+        Apakah Anda memiliki pertanyaan mengenai bagaimana cara kerja FoodShare? Berikut ini adalah beberapa pertanyaan yang sering diajukan oleh pengguna baru kami.
+      </p>
+
+      <div class="w-full max-w-4xl">
+        <details class="mb-4">
+          <summary class="font-semibold text-lg bg-gray-100 px-6 py-4 rounded cursor-pointer">
+            Bagaimana cara menjadi donatur di FoodShare?
+          </summary>
+          <div class="px-6 py-4">
+            Untuk menjadi donatur, Anda cukup mendaftar di platform kami dan mengisi data terkait donasi makanan yang ingin diberikan. Relawan kami akan segera menghubungi Anda untuk proses pengambilan.
+          </div>
+        </details>
+        <details class="mb-4">
+          <summary class="font-semibold text-lg bg-gray-100 px-6 py-4 rounded cursor-pointer">
+            Apakah ada biaya yang dikenakan untuk menggunakan layanan FoodShare?
+          </summary>
+          <div class="px-6 py-4">
+            Tidak, semua layanan kami sepenuhnya gratis baik bagi donatur maupun penerima manfaat. Kami bekerja dengan dukungan dari mitra dan donasi untuk menutupi biaya operasional.
+          </div>
+        </details>
+        <details class="mb-4">
+          <summary class="font-semibold text-lg bg-gray-100 px-6 py-4 rounded cursor-pointer">
+            Apakah kualitas makanan yang didonasikan terjamin?
+          </summary>
+          <div class="px-6 py-4">
+            Ya, kami melakukan seleksi ketat terhadap makanan yang didonasikan untuk memastikan semua makanan masih layak konsumsi dan aman bagi penerima manfaat.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+</x-app-layout>
