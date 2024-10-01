@@ -11,10 +11,11 @@ class Donation extends Model
     use HasFactory, HasUuids;
 
     protected $fillable = [
-        'food_item',
-        'quantity',
-        'unit',
-        'expiry_date',
-        'description',
+        'food_item', 'quantity', 'unit', 'expiry_date', 'description', 'status', 'address', 'restaurant_name'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

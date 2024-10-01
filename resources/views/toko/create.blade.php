@@ -15,33 +15,37 @@
         @method('POST')
         <div class="space-y-4">
 
-          <!-- Food Item -->
-          <div class="space-y-2">
+        <!-- Food Item -->
+        <div class="space-y-2">
             <label for="food-item" class="block font-medium text-gray-700">Food Item</label>
             <input name="food_item" type="text" id="food-item" placeholder="Enter food item name" required class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
-          </div>
+        </div>
+
+        <input type="text" name="status" hidden id="status" value="ready to pick up">
+        <input type="text" name="address" hidden id="address" value="{{ Auth::user()->address }}">
+        <input type="text" name="restaurant_name" hidden id="restaurant_name" value="{{ Auth::user()->restaurant_name }}">
+        {{-- user_id --}}
+        <input type="text" name="user_id" hidden id="user_id" value="{{ Auth::user()->id }}">
 
           <!-- Quantity and Unit -->
-          <div class="grid grid-cols-2 gap-4">
-
+        <div class="grid grid-cols-2 gap-4">
             <!-- Quantity -->
             <div class="space-y-2">
-              <label for="quantity" class="block font-medium text-gray-700">Quantity</label>
-              <input name="quantity" type="number" id="quantity" placeholder="Enter quantity" required class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
+                <label for="quantity" class="block font-medium text-gray-700">Quantity</label>
+                <input name="quantity" type="number" id="quantity" placeholder="Enter quantity" required class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
             </div>
-
             <!-- Unit -->
             <div class="space-y-2">
-              <label for="unit" class="block font-medium text-gray-700">Unit</label>
-              <select name="unit" id="unit" required class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
-                <option value="" disabled selected>Select unit</option>
-                <option value="kg">Kilograms (kg)</option>
-                <option value="lbs">Pounds (lbs)</option>
-                <option value="pcs">Pieces</option>
-                <option value="boxes">Boxes</option>
-              </select>
+                <label for="unit" class="block font-medium text-gray-700">Unit</label>
+                <select name="unit" id="unit" required class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500">
+                    <option value="" disabled selected>Select unit</option>
+                    <option value="kg">Kilograms (kg)</option>
+                    <option value="lbs">Pounds (lbs)</option>
+                    <option value="pcs">Pieces</option>
+                    <option value="boxes">Boxes</option>
+                </select>
             </div>
-          </div>
+        </div>
 
           <!-- Expiry Date -->
           <div class="space-y-2">

@@ -20,7 +20,6 @@
           <th class="px-4 py-2">Quantity</th>
           <th class="px-4 py-2">Expiry Date</th>
           <th class="px-4 py-2">Status</th>
-          <th class="px-4 py-2 text-right">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -30,24 +29,7 @@
           <td class="px-4 py-2">{{ $donation->quantity }}</td>
           <td class="px-4 py-2">{{ $donation->expiry_date }}</td>
           <td class="px-4 py-2">
-            <span class="px-2 py-1 rounded-full text-xs bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200">Active</span>
-          </td>
-          <td class="px-4 py-2 text-right">
-            <button class="focus:outline-none">
-              <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-              </svg>
-            </button>
-            <button class="focus:outline-none">
-              <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11v8m-4-4h8"></path>
-              </svg>
-            </button>
-            <button class="focus:outline-none">
-              <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
-              </svg>
-            </button>
+            <span class="px-2 py-1 rounded-full text-xs bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200">{{ ucfirst($donation->status) }}</span>
           </td>
         </tr>
         @endforeach

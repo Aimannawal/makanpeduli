@@ -49,4 +49,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Donnation_Request::class);
     }
+
+    public function Donation ()
+    {
+        return $this->hasMany(Donation::class);
+    }
 }

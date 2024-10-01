@@ -33,8 +33,12 @@ Route::middleware(['auth', 'role:admin'])->group(function(){
 
 Route::middleware(['auth', 'role:toko'])->group(function(){
     Route::get('/toko', [DonationController::class, 'index'])->name('toko.index');
-    Route::get('/toko/create', [DonationController::class, 'create'])->name('toko.create');
-    Route::post('/toko/store', [DonationController::class, 'store'])->name('toko.store');
+    Route::get('toko/create', [DonationController::class, 'create'])->name('toko.create');
+    Route::post('toko/store', [DonationController::class, 'store'])->name('toko.store');
+    Route::get('/toko/profile', function() {
+        return view('toko.profile');
+    })->name('toko.profile');
+    Route::post('/toko/profile-update', [DonationController::class, 'updateProfile'])->name('toko.profile.update');
 });
 
 
