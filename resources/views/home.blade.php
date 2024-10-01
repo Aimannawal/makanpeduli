@@ -16,7 +16,7 @@
       </div>
       <div class="flex space-x-4">
         <button class="hidden md:inline-flex border border-green-500 text-green-500 px-4 py-2 rounded hover:bg-green-500 hover:text-white transition-colors">Login</button>
-        <button class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Mulai Sumbang</button>
+        <a href="{{ route('toko.index') }}" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded">Donasi sekarang</a>
       </div>
     </nav>
 
@@ -34,7 +34,7 @@
       </p>
 
       <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4 mb-12">
-        <button class="bg-green-500 hover:bg-green-600 text-white text-lg px-8 py-4 rounded">Mulai Sumbang Sekarang</button>
+        <a href="{{ route('toko.index') }}" class="bg-green-500 hover:bg-green-600 text-white text-lg px-8 py-4 rounded">Donasi sekarang</a>
         <button class="border border-green-500 text-green-500 flex items-center text-lg px-8 py-4 rounded hover:bg-green-500 hover:text-white transition-colors">
           Cara Kerja
           <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -174,7 +174,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-6xl">
         <!-- Feature 1 -->
-        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+        <div class="bg-white p-8 rounded-lg shadow-md">
           <div class="w-16 h-16 bg-green-100 text-green-500 rounded-full flex items-center justify-center mb-6">
             <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M3 3h18v18H3zM3 12h18M12 3v18" />
@@ -187,7 +187,7 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+        <div class="bg-white p-8 rounded-lg shadow-md">
           <div class="w-16 h-16 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center mb-6">
             <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -201,7 +201,7 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="bg-gray-50 p-8 rounded-lg shadow-md">
+        <div class="bg-white p-8 rounded-lg shadow-md">
           <div class="w-16 h-16 bg-red-100 text-red-500 rounded-full flex items-center justify-center mb-6">
             <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
@@ -262,7 +262,7 @@
         </div>
 
         <!-- Testimonial 3 -->
-        <div class="bg-white p-8 rounded-lg shadow-md">
+        <div class="bg-white border p-8 rounded-lg shadow-md">
           <p class="text-gray-600 mb-4">
             "Saya senang bisa menjadi bagian dari FoodShare sebagai relawan. Rasanya sangat memuaskan bisa membantu orang lain, dan prosesnya sangat teratur."
           </p>

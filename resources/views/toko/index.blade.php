@@ -1,69 +1,57 @@
 @extends('toko.templates.admin-template')
 
 @section('content')
-<div class="container mx-auto p-6">
-    <div class="flex justify-between items-center mb-6">
-        <h1 class="text-2xl font-semibold text-gray-800">Permintaan Donasi</h1>
-        <button class="bg-blue-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-blue-700 transition-colors">
-            Tambah Permintaan
-        </button>
-    </div>
+<div class="flex justify-between items-center mb-6">
+    <h2 class="text-3xl font-bold">Donations</h2>
+    <a href="{{ route('toko.create') }}" @click="isDialogOpen = true" class="bg-blue-500 text-white hover:bg-blue-600 dark:bg-blue-700 dark:hover:bg-blue-800 px-4 py-2 rounded-lg flex items-center">
+      <svg class="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+      </svg>
+      Add Donation
+    </a>
+  </div>
 
-    <div class="bg-white rounded-lg shadow">
-        <div class="flex border-b border-gray-200">
-            <button class="px-4 py-2 text-sm font-medium text-blue-600 border-b-2 border-blue-600">Semua</button>
-            <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">Aktif</button>
-            <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">Draft</button>
-            <button class="px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700">Diarsipkan</button>
-        </div>
-
-        <table class="w-full">
-            <thead>
-                <tr class="text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                    <th class="px-6 py-3">Nama Makanan</th>
-                    <th class="px-6 py-3">Status</th>
-                    <th class="px-6 py-3">Jumlah</th>
-                    <th class="px-6 py-3">Total Donasi</th>
-                    <th class="px-6 py-3">Dibuat pada</th>
-                    <th class="px-6 py-3"></th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-gray-200">
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4">
-                            <div class="flex items-center">
-                                <div class="h-10 w-10 flex-shrink-0">
-                                    <img class="h-10 w-10 rounded-full" src="{{ asset('images/food-placeholder.jpg') }}" alt="">
-                                </div>
-                                <div class="ml-4">
-                                    <div class="text-sm font-medium text-gray-900"></div>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="px-6 py-4">
-                            <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                Aktif
-                            </span>
-                        </td>
-                        <td class="px-6 py-4 text-sm text-gray-500"></td>
-                        <td class="px-6 py-4 text-sm text-gray-500">0</td>
-                        <td class="px-6 py-4 text-sm text-gray-500"></td>
-                        <td class="px-6 py-4 text-right text-sm font-medium">
-                            <button class="text-gray-400 hover:text-gray-500">
-                                <svg class="h-5 w-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
-                                </svg>
-                            </button>
-                        </td>
-                    </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
+  <!-- Table -->
+  <div class="bg-white dark:bg-gray-900 rounded-lg overflow-hidden border">
+    <table class="min-w-full text-left">
+      <thead class="border-b border-gray-200 dark:border-gray-800">
+        <tr>
+          <th class="px-4 py-2">Food Item</th>
+          <th class="px-4 py-2">Quantity</th>
+          <th class="px-4 py-2">Expiry Date</th>
+          <th class="px-4 py-2">Status</th>
+          <th class="px-4 py-2 text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach ($donations as $donation)
+        <tr>
+          <td class="px-4 py-2">{{ $donation->food_item }}</td>
+          <td class="px-4 py-2">{{ $donation->quantity }}</td>
+          <td class="px-4 py-2">{{ $donation->expiry_date }}</td>
+          <td class="px-4 py-2">
+            <span class="px-2 py-1 rounded-full text-xs bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200">Active</span>
+          </td>
+          <td class="px-4 py-2 text-right">
+            <button class="focus:outline-none">
+              <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+              </svg>
+            </button>
+            <button class="focus:outline-none">
+              <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11v8m-4-4h8"></path>
+              </svg>
+            </button>
+            <button class="focus:outline-none">
+              <svg class="h-4 w-4 text-gray-500 dark:text-gray-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path>
+              </svg>
+            </button>
+          </td>
+        </tr>
+        @endforeach
+      </tbody>
+    </table>
+  </div>
 @endsection
-
-@push('styles')
-<style>
-    /* Add any additional custom styles here */
-</style>
-@endpush

@@ -2,65 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Approved_Donation;
-use App\Models\Donnation_Request;
+use App\Models\Donation;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class DonationController extends Controller
 {
-    // Display form for store (toko) to submit donation
-    public function createRequest()
+    public function create()
     {
         return view('toko.create');
     }
 
-    // Store donation request submitted by store (toko)
-    public function storeRequest(Request $request)
+    public function store(Request $request)
     {
         $request->validate([
-            'food_item' => 'required|string',
-            'quantity' => 'required|integer',
+            'food_item' => 'required|string|max:255',
+            'quantity' => 'required|integer|min:1',
+            'unit' => 'required|string',
+            'expiry_date' => 'required|date',
+            'description' => 'nullable|string',
         ]);
 
-        Donnation_Request::create([
-            'user_id' => Auth::user()->id,  // assuming user is authenticated
+        Donation::create([
             'food_item' => $request->food_item,
             'quantity' => $request->quantity,
-            'status' => 'pending',
+            'unit' => $request->unit,
+            'expiry_date' => $request->expiry_date,
+            'description' => $request->description,
         ]);
 
-        return redirect()->route('toko.index')->with('success', 'Donation request submitted!');
+        return redirect()->route('toko.index')->with('success', 'Donation created successfully.');
     }
 
-    // Admin view to approve donation requests
-    public function adminIndex()
+    public function index()
     {
-        $donationRequests = Donnation_Request::where('status', 'pending')->get();
-        return view('admin.index', compact('donationRequests'));
+        $donations = Donation::all();
+        return view('toko.index', compact('donations'));
     }
 
-    // Admin approves donation and assigns recipient
-    public function approveRequest(Request $request, Donnation_Request $donationRequest)
+    public function show(Donation $donation)
     {
-        $request->validate([
-            'recipient_name' => 'required|string',
-            'food_photo' => 'required|image',
-        ]);
-
-        // Store the uploaded food photo
-        $path = $request->file('food_photo')->store('food_photos');
-
-        // Create approved donation
-        Approved_Donation::create([
-            'donation_request_id' => $donationRequest->id,
-            'recipient_name' => $request->recipient_name,
-            'food_photo' => $path,
-        ]);
-
-        // Update status to approved
-        $donationRequest->update(['status' => 'approved']);
-
-        return redirect()->route('admin.index')->with('success', 'Donation approved and recipient assigned!');
+        return view('toko.show', compact('donation'));
     }
 }

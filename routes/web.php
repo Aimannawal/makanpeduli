@@ -21,17 +21,16 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth', 'role:admin'])->group(function(){
-    // Route::get('/admin/index', [AdminController::class, 'index']);  
+    // Route::get('/admin/index', [AdminController::class, 'index']);
     // Route::resource('admin', AdminController::class);
-    Route::get('/admin/index', [DonationController::class, 'adminIndex'])->name('admin.index');
+    Route::get('/admin', [DonationController::class, 'adminIndex'])->name('admin.index');
     Route::post('/admin/approve/{donationRequest}', [DonationController::class, 'approveRequest'])->name('admin.approve');
 });
 
 Route::middleware(['auth', 'role:toko'])->group(function(){
-    Route::get('/toko/index', [TokoController::class, 'index']);
-    Route::resource('toko', TokoController::class);
-    Route::get('/toko/create', [DonationController::class, 'createRequest'])->name('toko.create');
-    Route::post('/toko/store', [DonationController::class, 'storeRequest'])->name('toko.storeRequest');
+    Route::get('/toko', [DonationController::class, 'index'])->name('toko.index');
+    Route::get('/toko/create', [DonationController::class, 'create'])->name('toko.create');
+    Route::post('/toko/store', [DonationController::class, 'store'])->name('toko.store');
 });
 
 
