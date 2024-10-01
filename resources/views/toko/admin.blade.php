@@ -28,7 +28,7 @@
                 </td>
                 <td class="px-4 py-2 flex space-x-2">
                     <button
-                        class="bg-green-500 text-white hover:bg-green-600 px-2 py-1 rounded open-modal"
+                        class="bg-black text-white px-4 py-2.5 rounded-lg open-modal"
                         data-id="{{ $donation->id }}"
                         data-toggle="modal"
                         data-target="#statusModal">
@@ -39,6 +39,29 @@
             @endforeach
         </tbody>
     </table>
+</div>
+
+<div id="statusModal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50 z-[999]" >
+    <div class="bg-white dark:bg-gray-800 rounded-lg p-6 w-1/3">
+        <h2 class="text-lg font-bold mb-4">Update Donation Status</h2>
+        <form id="statusForm" method="POST" action="{{ route('admin.update.status') }}">
+            @csrf
+            <input type="hidden" name="donation_id" id="donation_id">
+            <div class="mb-4">
+                <label for="status" class="block text-sm font-medium mb-1">Select Status</label>
+                <select name="status" id="status" class="block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                    <option value="" disabled selected>Select Status</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="collected">Collected</option>
+                    <option value="received">Received</option>
+                </select>
+            </div>
+            <div class="flex justify-end">
+                <button type="button" class="px-4 py-2.5" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="bg-black text-white hover:bg-gray-900 px-4 py-2.5 rounded-lg">Update</button>
+            </div>
+        </form>
+    </div>
 </div>
 
 <!-- Modal -->
