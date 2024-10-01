@@ -17,7 +17,7 @@
                 <th class="px-4 py-2">Actions</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="overflow-x-scroll">
             @foreach ($donations as $donation)
             <tr>
                 <td class="px-4 py-2">{{ $donation->food_item }}</td>
