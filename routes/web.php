@@ -23,12 +23,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::middleware(['auth', 'role:admin'])->group(function(){
+Route::middleware('auth')->group(function(){
+    Route::get('/admin', [DonationController::class, 'index'])->name('toko.admin');
+    Route::post('/admin/update-status', [DonationController::class, 'updateStatus'])->name('admin.update.status');
 
-    Route::get('/admin/index', [DonationController::class, 'adminIndex'])->name('admin.index');
-    Route::post('/admin/approve/{donationRequest}', [DonationController::class, 'approveRequest'])->name('admin.approve');
-    Route::get('/admin/minta', [DonationController::class, 'adminMinta'])->name('admin.minta'); // Rute untuk melihat permintaan
-    Route::post('/admin/minta/{minta}/done', [DonationController::class, 'markAsDone'])->name('admin.markAsDone');
 });
 
 Route::middleware(['auth', 'role:toko'])->group(function(){

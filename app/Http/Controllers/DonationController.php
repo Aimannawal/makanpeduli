@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Donation;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Auth;
 
 class DonationController extends Controller
 {
@@ -52,6 +53,13 @@ class DonationController extends Controller
     public function index()
     {
         $donations = Donation::all();
+
+        $user = auth()->user();
+
+        if ($user->is_admin === 1) {
+            return view('toko.admin', compact('donations'));
+        }
+
         return view('toko.index', compact('donations'));
     }
 
@@ -78,4 +86,21 @@ class DonationController extends Controller
 
         return redirect()->route('toko.create')->with('success', 'Profil Anda telah diperbarui.');
     }
+
+    public function updateStatus(Request $request)
+    {
+        $request->validate([
+            'donation_id' => 'required|exists:donations,id',
+            'status' => 'required|in:rejected,collected,received', // Changed to required
+        ]);
+
+        $donation = Donation::findOrFail($request->donation_id);
+
+        // Update the donation status
+        $donation->status = $request->status;
+        $donation->save();
+
+        return redirect()->route('toko.admin')->with('success', 'Donation status updated successfully.');
+    }
+
 }
