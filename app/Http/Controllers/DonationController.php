@@ -56,11 +56,24 @@ class DonationController extends Controller
 
         $user = auth()->user();
 
-        if ($user->is_admin === 1) {
+        if ($user -> is_admin == 0 ) {
+            return view('toko.index', compact('donations'));
+        } else {
+            return redirect('/admin');
+        }
+    }
+
+    public function admin() {
+        $donations = Donation::all();
+
+        $user = auth()->user();
+
+        if ($user -> is_admin == 1 ) {
             return view('toko.admin', compact('donations'));
+        } else {
+            return redirect('/toko');
         }
 
-        return view('toko.index', compact('donations'));
     }
 
     public function show(Donation $donation)

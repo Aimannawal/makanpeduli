@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->group(function(){
-    Route::get('/admin', [DonationController::class, 'index'])->name('toko.admin');
+    Route::get('/admin', [DonationController::class, 'admin'])->name('toko.admin');
     Route::post('/admin/update-status', [DonationController::class, 'updateStatus'])->name('admin.update.status');
 
 });
