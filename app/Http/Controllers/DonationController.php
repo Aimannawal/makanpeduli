@@ -52,7 +52,7 @@ class DonationController extends Controller
 
     public function index()
     {
-        $donations = Donation::all();
+        $donations = Donation::where('user_id', auth()->user()->id)->get();
 
         $user = auth()->user();
 
