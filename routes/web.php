@@ -9,13 +9,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('home');
-});
-
-Route::resource('minta', MintaController::class);
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,7 +23,7 @@ Route::middleware('auth')->group(function(){
 
 });
 
-Route::middleware(['auth', 'role:toko'])->group(function(){
+Route::middleware('auth')->group(function(){
     Route::get('/toko', [DonationController::class, 'index'])->name('toko.index');
     Route::get('toko/create', [DonationController::class, 'create'])->name('toko.create');
     Route::post('toko/store', [DonationController::class, 'store'])->name('toko.store');

@@ -62,7 +62,7 @@
         </div>
 
         <div class="mt-6">
-          <button type="submit" id="submit-button" class="w-full bg-blue-500 text-white hover:bg-blue-600 px-4 py-2 rounded-lg">
+          <button type="submit" id="submit-button" class="w-full bg-black text-white hover:bg-gray-950 px-4 py-2.5 rounded-lg">
             Submit Donation
           </button>
         </div>

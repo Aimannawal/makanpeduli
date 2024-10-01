@@ -14,7 +14,7 @@
 
     <form action="{{ route('toko.profile.update') }}" method="POST" class="bg-white shadow-md rounded-lg p-8">
         @csrf
-        
+
         <div class="mb-4">
             <label for="name" class="block text-sm font-medium text-gray-700">Nama</label>
             <input type="text" name="name" id="name" value="{{ old('name', auth()->user()->name) }}" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-300">
@@ -36,7 +36,7 @@
         </div>
 
         <div class="mb-4">
-            <button type="submit" class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 rounded-md">Simpan</button>
+            <button type="submit" class="w-full bg-black hover:bg-gray-950 text-white font-bold py-2 rounded-md">Simpan</button>
         </div>
     </form>
 </div>

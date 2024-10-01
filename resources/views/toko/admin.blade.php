@@ -14,18 +14,43 @@
                 <th class="px-4 py-2">Quantity</th>
                 <th class="px-4 py-2">Expiry Date</th>
                 <th class="px-4 py-2">Status</th>
+                <th class="px-4 py-2">Restaurant name</th>
+                <th class="px-4 py-2">Address</th>
                 <th class="px-4 py-2">Actions</th>
             </tr>
         </thead>
         <tbody class="overflow-x-scroll">
+            @if ($donations->isEmpty())
+            <tr>
+                <td colspan="4" class="text-center px-4 py-2 text-gray-500">
+                    No donations found.
+                </td>
+            </tr>
+            @else
             @foreach ($donations as $donation)
             <tr>
                 <td class="px-4 py-2">{{ $donation->food_item }}</td>
                 <td class="px-4 py-2">{{ $donation->quantity }}</td>
                 <td class="px-4 py-2">{{ $donation->expiry_date }}</td>
+                {{-- <td class="px-4 py-2">{{ $donation->user_id->restaurant_name }}</td> --}}
                 <td class="px-4 py-2">
-                    <span class="px-2 py-1 rounded-full text-xs bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200">{{ ucfirst($donation->status) }}</span>
+                    <span class="px-2 py-1 rounded-full text-xs
+                        @if($donation->status == 'rejected')
+                            bg-red-200 text-red-800 dark:bg-red-900 dark:text-red-200
+                        @elseif($donation->status == 'collected')
+                            bg-blue-200 text-blue-800 dark:bg-blue-900 dark:text-blue-200
+                        @elseif($donation->status == 'received')
+                            bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200
+                        @else
+                            bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300
+                        @endif
+                    ">
+                        {{ ucfirst($donation->status) }}
+                    </span>
                 </td>
+                <td class="px-4 py-2"><p>{{ $donation->user->restaurant_name }}</p></td>
+                <td class="px-4 py-2 "><p class="truncate max-w-32">{{ $donation->user->address }}</p></td>
+                
                 <td class="px-4 py-2 flex space-x-2">
                     <button
                         class="bg-black text-white px-4 py-2.5 rounded-lg open-modal"
@@ -37,6 +62,7 @@
                 </td>
             </tr>
             @endforeach
+            @endif
         </tbody>
     </table>
 </div>

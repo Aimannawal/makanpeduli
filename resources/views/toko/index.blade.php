@@ -45,17 +45,38 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($donations as $donation)
+            @if ($donations->isEmpty())
                 <tr>
-                    <td class="px-4 py-2">{{ $donation->food_item }}</td>
-                    <td class="px-4 py-2">{{ $donation->quantity }}</td>
-                    <td class="px-4 py-2">{{ $donation->expiry_date }}</td>
-                    <td class="px-4 py-2">
-                        <span class="px-2 py-1 rounded-full text-xs bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200">{{ ucfirst($donation->status) }}</span>
+                    <td colspan="4" class="text-center px-4 py-2 text-gray-500">
+                        No donations found.
                     </td>
                 </tr>
-            @endforeach
+            @else
+                @foreach ($donations as $donation)
+                    <tr>
+                        <td class="px-4 py-2">{{ $donation->food_item }}</td>
+                        <td class="px-4 py-2">{{ $donation->quantity }}</td>
+                        <td class="px-4 py-2">{{ $donation->expiry_date }}</td>
+                        <td class="px-4 py-2">
+                            <span class="px-2 py-1 rounded-full text-xs
+                                @if($donation->status == 'rejected')
+                                    bg-red-200 text-red-800 dark:bg-red-900 dark:text-red-200
+                                @elseif($donation->status == 'collected')
+                                    bg-blue-200 text-blue-800 dark:bg-blue-900 dark:text-blue-200
+                                @elseif($donation->status == 'received')
+                                    bg-green-200 text-green-800 dark:bg-green-900 dark:text-green-200
+                                @else
+                                    bg-gray-200 text-gray-800 dark:bg-gray-700 dark:text-gray-300
+                                @endif
+                            ">
+                                {{ ucfirst($donation->status) }}
+                            </span>
+                        </td>
+                    </tr>
+                @endforeach
+            @endif
         </tbody>
+        
     </table>
 </div>
 @endsection
