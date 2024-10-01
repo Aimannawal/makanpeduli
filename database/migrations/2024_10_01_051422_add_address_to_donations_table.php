@@ -12,11 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('donations', function (Blueprint $table) {
-            // Add user_id column as a foreign key
-            $table->unsignedBigInteger('user_id')->after('id');
-
-            // Add foreign key constraint to the users table
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('address')->nullable()->after('status'); // Add the address column
         });
     }
 
@@ -26,9 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('donations', function (Blueprint $table) {
-            // Drop the foreign key and user_id column
-            $table->dropForeign(['user_id']);
-            $table->dropColumn('user_id');
+            $table->dropColumn('address'); // Drop the address column
         });
     }
 };
